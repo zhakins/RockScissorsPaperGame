@@ -33,6 +33,7 @@ public class Gamer implements IFRockScissorsPaper {
     int generate() {
         int result = 0;
         Scanner scanner = new Scanner(System.in);
+        System.out.println(" 1.Камень\n 2.Ножницы\n 3.Бумага");
         result = scanner.nextInt();
         return result;
     }
