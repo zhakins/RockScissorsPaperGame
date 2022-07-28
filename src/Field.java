@@ -7,7 +7,7 @@ public class Field {
 
     void menu() {
         String[] options = {"1- Начало игры",
-                "2- Показать счет игры",
+                "2- Сменить имя игрока",
                 "3- Показать статистику",
                 "4- Exit",
         };
@@ -19,11 +19,14 @@ public class Field {
 
             switch (option) {
                 case 1:
-                    System.out.println("Начало игры");
+                    System.out.println("Выбор:");
                     gm.start();
                     break;
                 case 2:
-                    System.out.println("Счет игры: ");
+                    System.out.println("Введите имя игрока: ");
+                    Scanner sc = new Scanner(System.in);
+                    String name = sc.nextLine();
+                    gm.gamer.setName(name);
                     System.out.println("Вернуться в меню: 1");
                     System.out.println("выход:4");
                     if (exitmenu() == 1) break;
@@ -32,7 +35,7 @@ public class Field {
 
                 case 3:
                     System.out.println("Статистика: ");
-                    System.out.println("Количество побед Игрока " + gm.getGamer().getWins());
+                    System.out.println("Количество побед " + gm.gamer.getName() + " " + gm.getGamer().getWins());
                     System.out.println("Количество побед Робота " + gm.getRobot().getWins());
                 case 4:
                     System.out.println("Выход ");
