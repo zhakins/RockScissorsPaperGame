@@ -7,7 +7,6 @@ public class Robot implements IFRockScissorsPaper {
     Robot() {
         this.name = "Азамат";
         this.wins = 0;
-
     }
 
     Robot(String name, int wins) {
@@ -28,7 +27,7 @@ public class Robot implements IFRockScissorsPaper {
     }
 
     public void setWins(int wins) {
-        this.wins = wins;
+        this.wins += wins;
     }
 
     int RandomGenerate() {

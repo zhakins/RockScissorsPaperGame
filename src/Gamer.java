@@ -27,7 +27,7 @@ public class Gamer implements IFRockScissorsPaper {
     }
 
     public void setWins(int wins) {
-        this.wins = wins;
+        this.wins += wins;
     }
 
     int generate() {

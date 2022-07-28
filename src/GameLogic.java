@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class GameLogic implements IFRockScissorsPaper {
     Robot robot = new Robot();
     Gamer gamer;
+    int win = 1;
 
     public Robot getRobot() {
         return robot;
@@ -40,13 +41,13 @@ public class GameLogic implements IFRockScissorsPaper {
         }
         int i = robot.RandomGenerate();
         int j = gamer.generate();
-        int win = 0;
+
         if (i == j) {
             System.out.println("Ничья");
         } else if (i == ROCK && j == SCISSORS) {
             System.out.println("Камень-ножницы, Робот победил");
 
-            robot.setWins(++win);
+            robot.setWins(win);
         } else if (i == SCISSORS && j == PAPER) {
             System.out.println("ножницы-бумага, Робот победил");
 
@@ -54,21 +55,21 @@ public class GameLogic implements IFRockScissorsPaper {
         } else if (i == PAPER && j == ROCK) {
             System.out.println("бумага-камень, Робот победил");
 
-            robot.setWins(++win);
+            robot.setWins(win);
         } else if (j == ROCK && i == SCISSORS) {
             System.out.println("Камень-ножницы, " + gamer.getName() + " победил");
 
-            gamer.setWins(++win);
+            gamer.setWins(win);
 
         } else if (j == SCISSORS && i == PAPER) {
             System.out.println("ножницы-бумага, " + gamer.getName() + " победил");
 
-            gamer.setWins(++win);
+            gamer.setWins(win);
             ;
         } else if (j == PAPER && i == ROCK) {
             System.out.println("бумага-камень, " + gamer.getName() + " победил");
 
-            gamer.setWins(++win);
+            gamer.setWins(win);
         }
     }
 
